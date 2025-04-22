@@ -16,8 +16,8 @@ namespace RabbitMQLearn.Producers.Abstractions
 
         public async Task PublishMessageAsync<T>(T message)
         {
-            using var connection = await _connection.GetConnectionAsync();
-            using var channel = await connection.CreateChannelAsync();
+            var connection = await _connection.GetConnectionAsync();
+            var channel = await connection.CreateChannelAsync();
 
             await channel.QueueDeclareAsync(queue: "users",
                                      durable: false,

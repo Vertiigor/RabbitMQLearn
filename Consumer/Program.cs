@@ -1,4 +1,7 @@
 
+using Consumer.Data.RabbitMQ.Connection;
+using Consumer.Services;
+
 namespace Consumer;
 
 public class Program
@@ -6,7 +9,12 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
         builder.AddServiceDefaults();
+
+        builder.Services.AddSingleton<IRabbitMqConnection, RabbitMqConnection>();
+
+        builder.Services.AddHostedService<RabbitMqListener>();
 
         // Add services to the container.
 

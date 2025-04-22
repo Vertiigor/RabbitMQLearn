@@ -1,6 +1,6 @@
 ﻿using RabbitMQ.Client;
 
-namespace RabbitMQLearn.Data.RabbitMQ.Connection
+namespace Consumer.Data.RabbitMQ.Connection
 {
     public class RabbitMqConnection : IRabbitMqConnection, IDisposable
     {
