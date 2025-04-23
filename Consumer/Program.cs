@@ -1,4 +1,3 @@
-
 using Consumer.Data.RabbitMQ.Connection;
 using Consumer.Services;
 
@@ -10,7 +9,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.AddServiceDefaults();
+        //builder.AddServiceDefaults();
 
         builder.Services.AddSingleton<IRabbitMqConnection, RabbitMqConnection>();
 
@@ -24,7 +23,7 @@ public class Program
 
         var app = builder.Build();
 
-        app.MapDefaultEndpoints();
+        //app.MapDefaultEndpoints();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

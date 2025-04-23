@@ -32,8 +32,6 @@
     <Folder Include="Producers\Implementations\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\RabbitMQLearn.ServiceDefaults\RabbitMQLearn.ServiceDefaults.csproj" />
-  </ItemGroup>
+ 
 
 </Project>

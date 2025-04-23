@@ -25,7 +25,7 @@ public class Program
             .AddDefaultTokenProviders();
 
 
-        builder.AddServiceDefaults();
+        //builder.AddServiceDefaults();
 
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserService, UserService>();
