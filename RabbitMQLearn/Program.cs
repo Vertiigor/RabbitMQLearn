@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using RabbitMQLearn.Data;
 using RabbitMQLearn.Data.RabbitMQ.Connection;
+using RabbitMQLearn.Extensions;
 using RabbitMQLearn.Models;
 using RabbitMQLearn.Producers.Abstractions;
 using RabbitMQLearn.Repository.Abstractions;
@@ -53,6 +54,7 @@ public class Program
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.ApplyMigrations();
         }
 
         app.UseHttpsRedirection();

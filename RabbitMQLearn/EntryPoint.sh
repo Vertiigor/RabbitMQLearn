@@ -1,7 +1,11 @@
 #!/bin/bash
+set -e
 
-# Apply EF Core migrations
-dotnet ef database update --no-build
+# Wait for Postgres to be available
+until dotnet ef database update --project RabbitMQLearn.csproj; do
+  echo "Waiting for the database to be ready..."
+  sleep 3
+done
 
-# Start the app
-dotnet RabbitMQLearn.dll
+# Run the app
+exec dotnet RabbitMQLearn.dll
